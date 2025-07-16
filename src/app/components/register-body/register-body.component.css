@@ -1,0 +1,74 @@
+.register_body_all {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    border-radius: 30px;
+}
+.reg_log_text {
+    font-weight: 700;
+    font-size: 32px;
+}
+.log_reg_btns_div {
+    margin: 20px 0;
+    display: flex;
+}
+.log_reg_up_btns {
+    width: 100px;
+    margin: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: green;
+    color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.log_up_btn:hover {
+    border: 1px dashed black;
+    background-color: white;
+    color: green;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.reg_up_btn:hover {
+    border: 1px dashed black;
+    background-color: white;
+    color: green;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.reg_text {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.register_form {
+    display: flex;
+    flex-direction: column;
+}
+.reg_form_input {
+    padding: 10px;
+    margin: 7px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 15px;
+}
+.registr_btn {    
+    padding: 10px 20px;
+    margin: 10px 0;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+}
+.registr_btn:hover {
+    background-color: white;
+    color: blue;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border: 1px solid blue;
+}

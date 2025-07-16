@@ -17,7 +17,9 @@ export class LoginBodyComponent {
   goToLoginPage() {
     this.authService.goLoginPage();
     console.log(444);
-    
+  }
+  goToRegisterPage() {
+    this.authService.goRegisterPage();
   }
 
 }

@@ -11,4 +11,7 @@ export class AuthService {
   goLoginPage () {
     this.router.navigate(['login']);
   }
+  goRegisterPage () {
+    this.router.navigate(['register']);
+  }
 }
