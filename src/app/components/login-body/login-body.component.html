@@ -5,9 +5,18 @@
         <div class="reg_up_btn log_reg_up_btns" (click)="goToRegisterPage()">Register</div>
     </div>
     <div class="log_text">Login</div>
-    <form class="login_form" action="">
-        <input class="log_form_input" type="text" placeholder="Username">
-        <input class="log_form_input" type="text" placeholder="Password">
-        <div class="login_btn">Login</div>
+    <form class="login_form" [formGroup]="loginForm">
+        <input formControlName="username" class="log_form_input" type="text" placeholder="Username">
+        <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+            <small *ngIf="loginForm.get('username')?.errors?.['required']" style="color: red;">* Username is required</small>
+            <!-- <small *ngIf="loginForm.get('username')?.errors?.['minlength']" style="color: red;">* At least 3 characters</small> -->
+        </div>
+
+        <input formControlName="password" class="log_form_input" type="text" placeholder="Password">
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            <small *ngIf="loginForm.get('password')?.errors?.['required']" style="color: red;"> * Password is required </small>
+            <small *ngIf="loginForm.get('password')?.errors?.['minlength']" style="color: red;">* At least 6 characters</small>
+        </div>
+        <button class="login_btn" (click)="loginBtnClick()"  [disabled]="loginForm.invalid">Login</button>
     </form>
 </div>

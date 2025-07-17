@@ -5,10 +5,29 @@
         <div class="reg_up_btn log_reg_up_btns" (click)="goToRegisterPage()">Register</div>
     </div>
     <div class="reg_text">Register</div>
-    <form class="register_form" action="">
-        <input class="reg_form_input" type="text" placeholder="Username">
-        <input class="reg_form_input" type="text" placeholder="Password">
-        <input class="reg_form_input" type="text" placeholder="Repeat the Password">
-        <div class="registr_btn" (click)="goToLoginPage()">Register</div>
+    <form class="register_form" [formGroup]="registerForm">
+        <input class="reg_form_input" type="text" placeholder="Username" formControlName="username">
+        <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid">
+            <small *ngIf="registerForm.get('username')?.errors?.['required']" style="color: red;">* Username is
+                required</small>
+            <small *ngIf="registerForm.get('username')?.errors?.['minlength']" style="color: red;">* At least 3
+                characters</small>
+        </div>
+
+        <input class="reg_form_input" type="text" placeholder="Password" formControlName="password">
+        <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+            <small *ngIf="registerForm.get('password')?.errors?.['required']" style="color: red;">* Password is
+                required</small>
+            <small *ngIf="registerForm.get('password')?.errors?.['minlength']" style="color: red;">* At least 6
+                characters</small>
+        </div>
+
+        <input class="reg_form_input" type="text" placeholder="Repeat the Password" formControlName="passwordRepeat">
+        <div *ngIf="registerForm.get('passwordRepeat')?.touched && registerForm.get('passwordRepeat')?.value != registerForm.get('password')?.value">
+            <small style="color: red;">* Passwords must be the SAME</small>
+        </div>
+
+        <div *ngIf="registerForm.get('password')?.value != '' && registerForm.get('password')?.value == registerForm.get('passwordRepeat')?.value && registerForm.get('username')?.valid && registerForm.get('password')?.valid"
+            class="registr_btn" (click)="goToLoginPage()">Register</div>
     </form>
 </div>
