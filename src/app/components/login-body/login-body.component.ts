@@ -34,5 +34,8 @@ export class LoginBodyComponent {
   loginBtnClick() {
     location.href = 'http://localhost:53477/';
   }
+  OpenForgotPasswordPage() {
+    this.authService.OpenForgotPasswordPage();
+  }
 
 }

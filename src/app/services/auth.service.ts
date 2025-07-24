@@ -17,4 +17,7 @@ export class AuthService {
     resetPassword() {
     this.router.navigate(['login']);
   };
+  OpenForgotPasswordPage() {
+    this.router.navigate(['forgotPassword']);
+  }
 }
