@@ -25,7 +25,10 @@ export class ForgotPasswordBodyComponent {
   }
 
   resetPasswordOk() {
-    this.authService.resetPassword();
+    if (this.forgotPassForm.valid) {
+        this.authService.resetPassword();
+    }
+  
   };
 
   // ngOnInit() {
