@@ -23,13 +23,12 @@
         </div>
 
         <input class="reg_form_input" type="text" placeholder="Repeat the Password" formControlName="passwordRepeat">
-        <div *ngIf="registerForm.get('passwordRepeat')?.touched && registerForm.get('passwordRepeat')?.value != registerForm.get('password')?.value">
+        <div
+            *ngIf="registerForm.get('passwordRepeat')?.touched && registerForm.get('passwordRepeat')?.value != registerForm.get('password')?.value">
             <small style="color: red;">* Passwords must be the SAME</small>
         </div>
 
-        <!-- <div *ngIf="registerForm.get('password')?.value != '' && registerForm.get('password')?.value == registerForm.get('passwordRepeat')?.value && registerForm.get('username')?.valid && registerForm.get('password')?.valid"
-            class="registr_btn" (click)="goToLoginPage()">Register</div> -->
-            <button [ngClass]="registerForm.valid ? 'registr_btn' : 'register_btn_disabled'" (click)="goToLoginPage()"
-                    [disabled]="registerForm.invalid">Register</button>
+        <button [ngClass]="registerForm.valid && registerForm.get('passwordRepeat')?.value === registerForm.get('password')?.value ? 'registr_btn' : 'register_btn_disabled'" (click)="goToLoginPage()"
+            [disabled]="registerForm.invalid">Register</button>
     </form>
 </div>

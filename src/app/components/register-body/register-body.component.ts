@@ -21,7 +21,10 @@ export class RegisterBodyComponent {
   }
 
   goToLoginPage() {
-    this.authService.goLoginPage();
+    if(this.registerForm.get('passwordRepeat')?.value === this.registerForm.get('password')?.value) {
+      this.authService.goLoginPage();
+    }
+
   };
 
   goToRegisterPage() {
