@@ -60,7 +60,7 @@
     padding: 10px 20px;
     margin: 10px 0;
     text-align: center;
-    background-color: blue;
+    background-color: green;
     color: white;
     cursor: pointer;
     border-radius: 15px;
@@ -78,7 +78,7 @@
 }
 .registr_btn:hover {
     background-color: white;
-    color: blue;
+    color: green;
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    border: 1px solid blue;
+    border: 1px solid green;
 }
