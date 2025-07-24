@@ -19,5 +19,8 @@ export class AuthService {
   };
   OpenForgotPasswordPage() {
     this.router.navigate(['forgotPassword']);
+  };
+  loginBtnClick() {
+    location.href = 'http://localhost:53477/';
   }
 }

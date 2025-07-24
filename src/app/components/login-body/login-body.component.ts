@@ -25,14 +25,13 @@ export class LoginBodyComponent {
 
   goToLoginPage() {
     this.authService.goLoginPage();
-    console.log(444);
   }
   goToRegisterPage() {
     this.authService.goRegisterPage();
   }
 
   loginBtnClick() {
-    location.href = 'http://localhost:53477/';
+    this.authService.loginBtnClick();
   }
   OpenForgotPasswordPage() {
     this.authService.OpenForgotPasswordPage();
