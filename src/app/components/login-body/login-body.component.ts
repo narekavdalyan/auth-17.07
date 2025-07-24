@@ -3,12 +3,13 @@ import { AuthService } from '../../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-login-body',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,RouterModule],
   templateUrl: './login-body.component.html',
   styleUrl: './login-body.component.css'
 })
@@ -31,8 +32,7 @@ export class LoginBodyComponent {
   }
 
   loginBtnClick() {
-    console.log(444);
-    
+    location.href = 'http://localhost:53477/';
   }
 
 }

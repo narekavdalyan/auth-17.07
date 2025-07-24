@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
@@ -17,7 +16,7 @@ export class RegisterBodyComponent {
     this.registerForm = this.fb.group({
       username: ["", [Validators.required, Validators.minLength(3)]],
       password: ["", [Validators.required, Validators.minLength(6)]],
-      passwordRepeat: ["", [Validators.required]],
+      passwordRepeat: ["", [Validators.required, Validators.minLength(6)]],
     });
   }
 

@@ -27,7 +27,9 @@
             <small style="color: red;">* Passwords must be the SAME</small>
         </div>
 
-        <div *ngIf="registerForm.get('password')?.value != '' && registerForm.get('password')?.value == registerForm.get('passwordRepeat')?.value && registerForm.get('username')?.valid && registerForm.get('password')?.valid"
-            class="registr_btn" (click)="goToLoginPage()">Register</div>
+        <!-- <div *ngIf="registerForm.get('password')?.value != '' && registerForm.get('password')?.value == registerForm.get('passwordRepeat')?.value && registerForm.get('username')?.valid && registerForm.get('password')?.valid"
+            class="registr_btn" (click)="goToLoginPage()">Register</div> -->
+            <button [ngClass]="registerForm.valid ? 'registr_btn' : 'register_btn_disabled'" (click)="goToLoginPage()"
+                    [disabled]="registerForm.invalid">Register</button>
     </form>
 </div>

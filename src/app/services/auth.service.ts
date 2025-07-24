@@ -14,4 +14,7 @@ export class AuthService {
   goRegisterPage () {
     this.router.navigate(['register']);
   }
+    resetPassword() {
+    this.router.navigate(['login']);
+  };
 }

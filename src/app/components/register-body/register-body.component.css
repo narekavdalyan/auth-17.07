@@ -66,6 +66,16 @@
     border-radius: 15px;
     font-size: 20px;
 }
+.register_btn_disabled {
+    padding: 10px 20px;
+    margin: 10px 0;
+    text-align: center;
+    background-color: white;
+    color: black;
+    border: 1px dashed black;
+    border-radius: 15px;
+    font-size: 20px;
+}
 .registr_btn:hover {
     background-color: white;
     color: blue;
