@@ -25,7 +25,7 @@ export class ForgotPasswordBodyComponent {
   }
 
   resetPasswordOk() {
-    if (this.forgotPassForm.valid) {
+    if (this.forgotPassForm.valid && this.forgotPassForm.get('newPassword')?.value == this.forgotPassForm.get('repeatNewPassword')?.value) {
         this.authService.resetPassword();
     }
   
