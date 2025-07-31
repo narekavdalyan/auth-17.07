@@ -87,3 +87,15 @@
     cursor: pointer;
     color: blue;
 }
+.registered_user_page {
+    padding: 30px 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    border-radius: 30px;
+    font-size: 30px;
+}

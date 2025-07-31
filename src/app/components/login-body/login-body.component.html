@@ -1,4 +1,4 @@
-<div class="login_body_all">
+<div class="login_body_all" #login_body_all>
     <div class="reg_log_text">Registration & Login</div>
     <div class="log_reg_btns_div">
         <div class="log_up_btn log_reg_up_btns" (click)="goToLoginPage()">Login</div>
@@ -20,4 +20,9 @@
         <button [ngClass]="loginForm.valid ? 'login_btn' : 'login_btn_disabled'" (click)="loginBtnClick()"  [disabled]="loginForm.invalid">Login</button>
         <a class="forgot_pass_p" (click)="OpenForgotPasswordPage()">Forgot password ?</a>
     </form>
+
 </div>
+
+ <div #registered_user_page class="registered_user_page">
+   
+    </div>

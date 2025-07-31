@@ -54,7 +54,7 @@ export class RegisterBodyComponent {
       const newUser: User = {
         id: Math.floor(Math.random() * 1000),
         username: this.registerForm.get('username')?.value,
-        password: this.registerForm.get('password')?.value
+        password: this.registerForm.get('password')?.value,
       };
 
       this.registeredUsers.push(newUser);
