@@ -49,8 +49,6 @@ export class LoginBodyComponent implements OnInit {
   }
 
   loginBtnClick() {
-    // this.authService.loginBtnClick();
-
     let { username, password } = this.loginForm.value;
 
     let user = this.users_array.find(
@@ -62,18 +60,55 @@ export class LoginBodyComponent implements OnInit {
       setTimeout(() => {
         this.login_body_all.nativeElement.style.display = 'none';
         this.registered_user_page.nativeElement.style.display = 'flex';
-        this.registered_user_page.nativeElement.innerHTML = ` Hello, ${user.username.toUpperCase()}`;
+        this.registered_user_page.nativeElement.innerHTML = `
+
+                 <style>
+                    #logoutBtn {
+                        margin-top: 15px; 
+                        padding: 10px 20px; 
+                        width: 100px;
+                        text-align: center;
+                        cursor: pointer; 
+                        background-color: red; 
+                        color: white; border-radius: 15px; 
+                        border: none;
+                      }
+                    
+                    #logoutBtn:hover {
+                      background-color: white;
+                      color: red;
+                      border: 1px solid red;
+                      transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    }
+                  </style>
+
+        <div style="display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;">
+          <h2> Hello, ${user.username.toUpperCase()} </h2>
+          <button id="logoutBtn"> Log Out </button>
+        </div>`;
+
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+          logoutBtn.addEventListener('click', () => {
+            this.registered_user_page.nativeElement.style.display = 'none';
+            this.login_body_all.nativeElement.style.display = 'flex';
+
+            this.loginForm.setValue({
+              username: '',
+              password: ''
+            });
+          });
+        };
+
       }, 1000);
-
-      // setTimeout(() => {
-      //   this.authService.loginBtnClick();
-      // }, 3000);
-
     } else {
       alert('ERROR : username or password is incorrect');
     };
-
   };
+
   OpenForgotPasswordPage() {
     this.authService.OpenForgotPasswordPage();
   };
