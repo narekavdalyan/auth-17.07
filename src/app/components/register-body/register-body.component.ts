@@ -50,22 +50,29 @@ export class RegisterBodyComponent {
 
   registerTheUser() {
     if (this.registerForm.get('passwordRepeat')?.value === this.registerForm.get('password')?.value) {
-
       const newUser: User = {
         id: Math.floor(Math.random() * 1000),
         username: this.registerForm.get('username')?.value,
         password: this.registerForm.get('password')?.value,
       };
+      const userExists = this.registeredUsers.find(
+        user => user.username === newUser.username
+      );
 
-      this.registeredUsers.push(newUser);
-      localStorage.setItem('registeredUsers', JSON.stringify(this.registeredUsers));
-
-      console.log(localStorage.getItem('registeredUsers'));
-      console.log(this.registeredUsers);
-    }
-  }
+      if (userExists) {
+        alert('This username is already taken, please try another one');
+      } else {
+        this.registeredUsers.push(newUser);
+        localStorage.setItem('registeredUsers', JSON.stringify(this.registeredUsers));
+        this.authService.goLoginPage();
+      };
+    };
+  };
 
   goToRegisterPage() {
     this.authService.goRegisterPage();
-  }
+  };
+
+
+  
 }
