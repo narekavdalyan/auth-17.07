@@ -62,7 +62,6 @@ export class RegisterBodyComponent {
 
       console.log(localStorage.getItem('registeredUsers'));
       console.log(this.registeredUsers);
-      
     }
   }
 
